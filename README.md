@@ -1,30 +1,38 @@
-# React + TypeScript + Vite
+# Projeto Todo com React e TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação simples de lista de tarefas (Todo) construída com React e TypeScript.
 
-Currently, two official plugins are available:
+## Estrutura do Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O projeto está estruturado da seguinte maneira:
 
-## Expanding the ESLint configuration
+- `src/`: Este diretório contém todo o código fonte do projeto.
+  - `App.tsx`: Este é o componente principal da aplicação.
+  - `components/`: Este diretório contém todos os componentes React usados na aplicação.
+    - `TaskForm.tsx`: Este componente é responsável por adicionar novas tarefas.
+    - `TaskList.tsx`: Este componente é responsável por exibir as tarefas.
+  - `interfaces/`: Este diretório contém todas as interfaces TypeScript usadas na aplicação.
+    - `Task.ts`: Esta interface define a estrutura de uma tarefa.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Como executar o projeto
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone o repositório para a sua máquina local.
+2. Navegue até o diretório do projeto.
+3. Instale as dependências do projeto com o comando `npm install`.
+4. Execute o projeto em modo de desenvolvimento com o comando `npm run dev`.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Como construir o projeto
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Para construir o projeto para produção, execute o comando `npm run build`.
+
+## Linting
+
+Este projeto usa ESLint para linting. Você pode executar o linter com o comando `npm run lint`.
+
+## Contribuindo
+
+Contribuições são bem-vindas! Por favor, leia as diretrizes de contribuição antes de enviar um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a licença
