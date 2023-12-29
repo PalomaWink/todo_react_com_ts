@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react'
+import { useState, ChangeEvent, FormEvent } from 'react'
 
 //CSS
 import styles from './TaskForm.module.css'
@@ -8,11 +8,11 @@ import { ITask, Props } from '../interfaces/Task'
 
 const TaskForm = ({ taskList, setTaskList }: Props) => {
 
-  const [id, setId] = useState<number>(0)
+  // const [id, setId] = useState<number>(0)
   const [title, setTitle] = useState<string>('')
   const [difficulty, setDifficulty] = useState<number>(0)
 
-  const addTaskHandler = (event: React.FormEvent<HTMLFormElement>) => {
+  const addTaskHandler = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const id = Math.floor(Math.random() * 1000)
 
