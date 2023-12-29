@@ -4,9 +4,9 @@ import { useState, ChangeEvent, FormEvent } from 'react'
 import styles from './TaskForm.module.css'
 
 //Interface
-import { ITask, Props } from '../interfaces/Task'
+import { ITask, PropsTaskForm } from '../interfaces/Task'
 
-const TaskForm = ({ taskList, setTaskList }: Props) => {
+const TaskForm = ({ taskList, setTaskList }: PropsTaskForm) => {
 
   // const [id, setId] = useState<number>(0)
   const [title, setTitle] = useState<string>('')
