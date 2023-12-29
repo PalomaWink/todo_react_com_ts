@@ -4,9 +4,9 @@ import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react'
 import styles from './TaskForm.module.css'
 
 //Interface
-import { ITask } from '../interfaces/Task'
+import { ITask, Props } from '../interfaces/Task'
 
-const TaskForm = () => {
+const TaskForm = ({ taskList, setTaskList }: Props) => {
 
   const [id, setId] = useState<number>(0)
   const [title, setTitle] = useState<string>('')
@@ -14,8 +14,16 @@ const TaskForm = () => {
 
   const addTaskHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    
+    const id = Math.floor(Math.random() * 1000)
+
+    const newTask: ITask = {id, title, difficulty}
+
+    // Com a exclamacao eu garanto para o TS que a informacao vai vim
+    setTaskList!([...taskList, newTask])
+    setTitle('')
+    setDifficulty(0)
   }
+  console.log(taskList);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.name === 'title') {
@@ -23,7 +31,6 @@ const TaskForm = () => {
     } else {
       setDifficulty(parseInt(event.target.value))
     }
-    console.log(title, difficulty);
   }
 
 
@@ -34,11 +41,11 @@ const TaskForm = () => {
     >
       <div className={styles.input_conteiner}>
         <label htmlFor="title">Título:</label>
-        <input type="text" name="title" placeholder="Título da tarefa" onChange={handleChange} />
+        <input type="text" name="title" placeholder="Título da tarefa" onChange={handleChange} value={title}/>
       </div>
       <div className={styles.input_conteiner}>
         <label htmlFor="difficulty">Dificuldade:</label>
-        <input type="text" name="difficulty" placeholder="Dificuldade da tarefa" onChange={handleChange} />
+        <input type="text" name="difficulty" placeholder="Dificuldade da tarefa" onChange={handleChange} value={difficulty} />
       </div>
       <button type="submit">Criar tarefa</button>
     </form>
