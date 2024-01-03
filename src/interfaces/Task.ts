@@ -13,4 +13,5 @@ export interface PropsTaskForm {
 
 export interface PropsTaskList {
   taskList: ITask[],
+  handleDeleteTask: (id: number) => void
 }

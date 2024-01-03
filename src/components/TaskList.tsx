@@ -4,7 +4,7 @@ import { PropsTaskList } from "../interfaces/Task"
 // CSS
 import styles from './TaskList.module.css'
 
-const TaskList = ( {taskList}: PropsTaskList) => {
+const TaskList = ( {taskList, handleDeleteTask}: PropsTaskList) => {
   return (
     <>
       {taskList.length > 0 ? (
@@ -16,7 +16,7 @@ const TaskList = ( {taskList}: PropsTaskList) => {
             </div>
             <div className={styles.actions}>
               <i className="bi bi-pencil-square"></i>
-              <i className="bi bi-trash3"></i>
+              <i className="bi bi-trash3" onClick={() => handleDeleteTask(task.id)}></i>
             </div>
           </div>
         ))
