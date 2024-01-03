@@ -1,3 +1,5 @@
+import React from "react"
+
 export interface ITask {
   id: number,
   title: string,
@@ -9,9 +11,16 @@ export interface ITask {
 export interface PropsTaskForm {
   taskList: ITask[],
   setTaskList?: React.Dispatch<React.SetStateAction<ITask[]>>
+  btnText: string,
 }
 
 export interface PropsTaskList {
   taskList: ITask[],
   handleDeleteTask: (id: number) => void
+  handleEdit: () => void,
+}
+
+// tipar como ReactNode é basicamente dizer que vou utilizar TSX no children
+export type PropsModal = {
+  children: React.ReactNode,
 }
