@@ -6,7 +6,7 @@ import styles from './TaskForm.module.css'
 //Interface
 import { ITask, PropsTaskForm } from '../interfaces/Task'
 
-const TaskForm = ({ taskList, setTaskList }: PropsTaskForm) => {
+const TaskForm = ({ taskList, setTaskList, btnText }: PropsTaskForm) => {
 
   // const [id, setId] = useState<number>(0)
   const [title, setTitle] = useState<string>('')
@@ -23,7 +23,6 @@ const TaskForm = ({ taskList, setTaskList }: PropsTaskForm) => {
     setTitle('')
     setDifficulty(0)
   }
-  console.log(taskList);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.name === 'title') {
@@ -47,7 +46,7 @@ const TaskForm = ({ taskList, setTaskList }: PropsTaskForm) => {
         <label htmlFor="difficulty">Dificuldade:</label>
         <input type="text" name="difficulty" placeholder="Dificuldade da tarefa" onChange={handleChange} value={difficulty} />
       </div>
-      <button type="submit">Criar tarefa</button>
+      <button type="submit">{btnText}</button>
     </form>
   )
 }
