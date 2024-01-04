@@ -15,7 +15,7 @@ const TaskList = ( {taskList, handleDeleteTask, handleEdit}: PropsTaskList) => {
               <p>Dificuldade: {task.difficulty}</p>
             </div>
             <div className={styles.actions}>
-              <i className="bi bi-pencil-square" onClick={() => handleEdit()}></i>
+              <i className="bi bi-pencil-square" onClick={() => handleEdit(task)}></i>
               <i className="bi bi-trash3" onClick={() => handleDeleteTask(task.id)}></i>
             </div>
           </div>

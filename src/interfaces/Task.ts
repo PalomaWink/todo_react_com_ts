@@ -12,12 +12,14 @@ export interface PropsTaskForm {
   taskList: ITask[],
   setTaskList?: React.Dispatch<React.SetStateAction<ITask[]>>
   btnText: string,
+  task?: ITask | null,
+  handleUpdateTask?({id, title, difficulty}: ITask): void,
 }
 
 export interface PropsTaskList {
   taskList: ITask[],
   handleDeleteTask: (id: number) => void
-  handleEdit: () => void,
+  handleEdit: (task: ITask) => void,
 }
 
 // tipar como ReactNode é basicamente dizer que vou utilizar TSX no children
