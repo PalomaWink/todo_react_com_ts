@@ -5,7 +5,7 @@ import style from './Modal.module.css';
 import { PropsModal } from '../interfaces/Task';
 
 export default function Modal({ children }: PropsModal) {
-  const closeModal = (e: React.MouseEvent): void => {
+  const closeModal = (): void => {
     const modal = document.querySelector('#modal')
     modal!.classList.add("hide")
   }
